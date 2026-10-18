@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Devi Ali | Product Implementation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#000; --fg:#fff; --dim:#bdbdbd; --line:#fff;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--fg:#fff;--dim:#bdbdbd;--line:#fff}}
+:root[data-theme="dark"]{--bg:#000;--fg:#fff;--dim:#bdbdbd;--line:#fff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Space Mono","Courier New",monospace;line-height:1.7;min-height:100vh}
+main{max-width:720px;margin:0 auto;padding:56px 24px 48px;position:relative;z-index:1}
+#code-bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.32;pointer-events:none}
+.robot{width:84px;height:auto;display:block;margin-bottom:36px}
+.robot .eye{transform-origin:center;transform-box:fill-box;animation:blink 4.5s infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+h1{font-size:clamp(2.6rem,11vw,5rem);line-height:1.05;margin:0 0 12px;font-weight:700;letter-spacing:-.03em;min-height:1.1em}
+.role{font-size:clamp(1.1rem,4vw,1.6rem);margin:0 0 40px;min-height:1.7em}
+.cursor{display:inline-block;width:.6em;height:1.1em;background:var(--fg);vertical-align:text-bottom;margin-left:4px;animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+.about{border-top:2px solid var(--line);padding-top:24px;margin:0 0 40px}
+.about p{margin:0;max-width:64ch;color:var(--dim)}
+.cta{display:inline-block;background:var(--fg);color:var(--bg);text-decoration:none;font-weight:700;padding:14px 24px;border:2px solid var(--fg)}
+.cta:hover{background:var(--bg);color:var(--fg)}
+a:focus-visible{outline:3px solid var(--fg);outline-offset:4px}
+footer{margin-top:48px;color:var(--dim);font-size:.85rem}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.icon{display:inline-flex;align-items:center;justify-content:center;width:50px;height:50px;border:2px solid var(--fg);color:var(--fg);background:var(--bg)}
+.icon svg{width:24px;height:24px}
+.icon:hover{background:var(--fg);color:var(--bg)}
+@media (prefers-reduced-motion:reduce){.robot .eye,.cursor{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="code-bg" aria-hidden="true"></canvas>
+<main>
+  <svg class="robot" viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+    <line x1="42" y1="4" x2="42" y2="16"/><circle cx="42" cy="4" r="3" fill="currentColor"/>
+    <rect x="10" y="16" width="64" height="52" rx="4"/>
+    <rect class="eye" x="22" y="30" width="10" height="14" fill="currentColor" stroke="none"/>
+    <rect class="eye" x="52" y="30" width="10" height="14" fill="currentColor" stroke="none"/>
+    <line x1="26" y1="56" x2="58" y2="56"/>
+  </svg>
+
+  <h1 id="name" aria-label="Devi Ali">Devi Ali</h1>
+  <p class="role"><span id="role" aria-label="Product Implementation">Product Implementation</span><span class="cursor" aria-hidden="true"></span></p>
+
+  <section class="about">
+    <p>Passion as a Product Implementation professional is solving problems by identifying root causes and finding effective, long-term solutions. I enjoy investigating system issues, understanding their impact on operations, and working with teams to improve the system and prevent recurring problems.</p>
+  </section>
+
+  <div class="links">
+    <a class="icon" href="https://www.linkedin.com/in/deviali" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a class="icon" href="https://www.instagram.com/deviali21" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+
+  <footer>Let’s connect on LinkedIn.</footer>
+</main>
+
+<script>
+(function(){
+  var nameEl=document.getElementById('name'), roleEl=document.getElementById('role');
+  var NAME='Devi Ali', ROLE='Product Implementation', GLYPHS='01#%&@/<>[]{}=+*';
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function decode(el,text,done){
+    var frame=0, total=text.length*4;
+    var t=setInterval(function(){
+      var out='';
+      for(var i=0;i<text.length;i++){
+        if(text[i]===' ') out+=' ';
+        else if(i < frame/4) out+=text[i];
+        else out+=GLYPHS[Math.floor(Math.random()*GLYPHS.length)];
+      }
+      el.textContent=out; frame++;
+      if(frame>total){clearInterval(t); el.textContent=text; if(done) done();}
+    },40);
+  }
+  function type(el,text){
+    var i=0; el.textContent='';
+    var t=setInterval(function(){
+      el.textContent=text.slice(0,++i);
+      if(i>=text.length) clearInterval(t);
+    },60);
+  }
+  roleEl.textContent='';
+  decode(nameEl,NAME,function(){ type(roleEl,ROLE); });
+  nameEl.addEventListener('mouseenter',function(){ decode(nameEl,NAME); });
+})();
+</script>
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var c=document.getElementById('code-bg'), ctx=c.getContext('2d');
+  var TOKENS='{ } ( ) ; = > < [ ] / 0 1 if for let fn => && || ++ == </> var new try 404 .js null true'.split(' ');
+  var size=16, cols, drops, dpr;
+  function resize(){
+    dpr=window.devicePixelRatio||1;
+    c.width=innerWidth*dpr; c.height=innerHeight*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.fillStyle='#000'; ctx.fillRect(0,0,innerWidth,innerHeight);
+    cols=Math.ceil(innerWidth/(size*2.2));
+    drops=[]; for(var i=0;i<cols;i++) drops.push(Math.random()*-40);
+  }
+  function draw(){
+    ctx.fillStyle='rgba(0,0,0,0.12)'; ctx.fillRect(0,0,innerWidth,innerHeight);
+    ctx.font=size+'px "Space Mono",monospace';
+    for(var i=0;i<cols;i++){
+      var t=TOKENS[Math.floor(Math.random()*TOKENS.length)];
+      var x=i*size*2.2, y=drops[i]*size;
+      ctx.fillStyle='#fff'; ctx.fillText(t,x,y);
+      if(y>innerHeight && Math.random()>0.975) drops[i]=0;
+      drops[i]+=0.5;
+    }
+  }
+  resize(); addEventListener('resize',resize);
+  var timer=setInterval(draw,60);
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden){clearInterval(timer);} else {timer=setInterval(draw,60);}
+  });
+})();
+</script>
+</body>
+</html>
